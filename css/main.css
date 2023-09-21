@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,500,700,900&family=Ubuntu:300,400,500,700,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+:root {
+  --brown: #59291c;
+  --yellow: #faaf18;
+  --cream: #f5ece7;
+  --orange: #ed7902;
+  --blue: #475993;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 100%;
+  max-width: 125rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+header {
+  width: 100%;
+  height: 9rem;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container nav {
+  display: flex;
+  align-items: center;
+  gap: 7rem;
+}
+header .container nav ul {
+  display: flex;
+  align-items: center;
+  gap: 7.7rem;
+}
+header .container nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+header .container nav ul li a span {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--brown);
+  text-transform: uppercase;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.s-hero {
+  width: 100%;
+  height: 62.3rem;
+  background: linear-gradient(164deg, rgba(239, 225, 218, 0) 3.82%, #efe1da 90.95%);
+}
+.s-hero .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.s-hero .left-container {
+  flex: 1;
+  padding-top: 12rem;
+  max-width: 52.7rem;
+}
+.s-hero .left-container h3 {
+  color: var(--yellow);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 3.7rem;
+}
+.s-hero .left-container h3:after {
+  content: "";
+  flex: 1;
+  max-width: 29rem;
+  height: 2px;
+  background: url("../img/line.svg") no-repeat center center;
+  display: inline-block;
+}
+.s-hero .left-container .value {
+  position: relative;
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 3.7rem;
+}
+.s-hero .left-container .value:after {
+  content: "";
+  position: absolute;
+  background: url("../img/arrow-btn.svg") no-repeat center center;
+  width: 6rem;
+  height: 3.8rem;
+  right: -4.5rem;
+  top: 2rem;
+}
+.s-hero .left-container .value h2 {
+  color: var(--yellow);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 6.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.s-hero .left-container .value span {
+  color: var(--brown);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.s-hero .left-container .value button {
+  padding: 2.2rem 5.2rem;
+  font-family: "Ubuntu", sans-serif;
+  background-color: var(--brown);
+  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 0.6rem;
+  display: flex;
+  text-transform: uppercase;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease-in-out;
+}
+.s-hero .left-container .value button:hover {
+  background-color: var(--orange);
+}
+.s-hero .right-container {
+  position: relative;
+  background-color: var(--yellow);
+  flex: 1;
+  max-width: 52.8rem;
+  height: 66.3rem;
+  border-radius: 0 0 1.2rem 1.2rem;
+  padding-top: 9.5rem;
+  padding-bottom: 4rem;
+  margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.s-hero .right-container .image {
+  position: absolute;
+  width: 68.4rem;
+  height: 49.2rem;
+}
+.s-hero .right-container .image img {
+  position: absolute;
+}
+.s-hero .right-container .image img.refri {
+  top: 2.5rem;
+  left: 0;
+  z-index: 1;
+}
+.s-hero .right-container .image img.fritas {
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.s-hero .right-container .image img.lanche {
+  bottom: 0;
+  left: 52px;
+  z-index: 2;
+}
+.s-hero .right-container .image img.logo {
+  bottom: 6px;
+  right: 10px;
+  z-index: 3;
+}
+.s-hero .right-container .offer {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.s-hero .right-container .offer:before {
+  content: "";
+  width: 8rem;
+  height: 1.4rem;
+  background: url(../img/line-left.svg) no-repeat center center;
+  display: inline-block;
+}
+.s-hero .right-container .offer:after {
+  content: "";
+  width: 8rem;
+  height: 1.4rem;
+  background: url(../img/line-right.svg) no-repeat center center;
+  display: inline-block;
+}
+.s-hero .right-container .offer p {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  font-size: 1.6rem;
+}
+.s-hero .right-container .offer p img {
+  margin-right: 1.6rem;
+}
+.s-hero .right-container .offer p strong {
+  margin-left: 0.5rem;
+}
+
+.s-offer {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 20rem;
+  background: url("../img/bg-login.png") no-repeat left center;
+  padding-top: 4.7rem;
+  padding-bottom: 3.2rem;
+}
+.s-offer .container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.s-offer .left-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4.1rem;
+  flex: 1;
+  max-width: 59.7rem;
+}
+.s-offer .left-container h3 {
+  color: var(--white);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.s-offer .left-container h2 {
+  color: var(--brown);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4.2rem;
+  font-weight: bold;
+  letter-spacing: -3px;
+}
+.s-offer button {
+  flex: 1;
+  background-color: var(--white);
+  border-radius: 0.6rem;
+  margin-right: 3rem;
+  max-width: 52.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.9rem;
+  padding: 3rem 0;
+}
+.s-offer button span {
+  color: var(--blue);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}/*# sourceMappingURL=main.css.map */
