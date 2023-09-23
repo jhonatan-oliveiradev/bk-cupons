@@ -1,10 +1,22 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,500,700,900&family=Ubuntu:300,400,500,700,900&display=swap");
-
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Lato", sans-serif;
+	font-family: var(--font-sans);
+}
+
+::-webkit-scrollbar {
+	width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--brown);
+	border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--cream);
+	border-radius: 1rem;
 }
 
 :root {
@@ -13,9 +25,15 @@
 	--cream: #f5ece7;
 	--orange: #ed7902;
 	--blue: #475993;
+	--gray: #979797;
 
 	--white: #ffffff;
 	--black: #000000;
+
+	--font-sans: "Lato", sans-serif;
+	--font-mono: "Ubuntu", sans-serif;
+
+	--transition: all 0.2s ease-in-out;
 }
 
 html {
@@ -82,7 +100,12 @@ header {
 							font-size: 1.4rem;
 							color: var(--brown);
 							text-transform: uppercase;
-							font-family: "Ubuntu", sans-serif;
+							font-family: var(--font-mono);
+							transition: var(--transition);
+
+							&:hover {
+								color: var(--orange);
+							}
 						}
 					}
 				}
@@ -111,9 +134,13 @@ header {
 		padding-top: 12rem;
 		max-width: 52.7rem;
 
+		& > img {
+			animation: fadeUp 1s forwards;
+		}
+
 		h3 {
 			color: var(--yellow);
-			font-family: "Ubuntu", sans-serif;
+			font-family: var(--font-mono);
 			font-size: 3.2rem;
 			font-weight: bold;
 			text-transform: uppercase;
@@ -121,6 +148,7 @@ header {
 			display: flex;
 			align-items: center;
 			gap: 3.7rem;
+			animation: fadeLeft 1s forwards;
 
 			&:after {
 				content: "";
@@ -139,6 +167,10 @@ header {
 			align-items: center;
 			gap: 3.7rem;
 
+			& > div {
+				animation: fadeLeft 1s forwards;
+			}
+
 			&:after {
 				content: "";
 				position: absolute;
@@ -147,15 +179,17 @@ header {
 				height: 3.8rem;
 				right: -4.5rem;
 				top: 2rem;
+				animation: fadeRight 1s forwards;
 			}
 
 			h2 {
 				color: var(--yellow);
-				font-family: "Ubuntu", sans-serif;
+				font-family: var(--font-mono);
 				font-size: 6.5rem;
 				font-weight: bold;
 				text-transform: uppercase;
 				margin-bottom: 0.5rem;
+				animation: fadeLeft 1s forwards;
 			}
 
 			span {
@@ -163,9 +197,10 @@ header {
 				font-size: 1.3rem;
 				font-weight: bold;
 			}
+
 			button {
 				padding: 2.2rem 5.2rem;
-				font-family: "Ubuntu", sans-serif;
+				font-family: var(--font-mono);
 				background-color: var(--brown);
 				color: var(--white);
 				font-size: 1.6rem;
@@ -176,7 +211,8 @@ header {
 				text-transform: uppercase;
 				box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25),
 					0px 4px 4px rgba(0, 0, 0, 0.25);
-				transition: all 0.2s ease-in-out;
+				transition: var(--transition);
+				animation: pulse 2s infinite;
 
 				&:hover {
 					background-color: var(--orange);
@@ -201,6 +237,10 @@ header {
 		align-items: center;
 		justify-content: space-between;
 
+		.grelhado {
+			animation: fadeDown 1s forwards;
+		}
+
 		.image {
 			position: absolute;
 			width: 68.4rem;
@@ -213,24 +253,29 @@ header {
 					top: 2.5rem;
 					left: 0;
 					z-index: 1;
+					animation: fadeLeft 1s forwards;
 				}
 
 				&.fritas {
 					top: 0;
 					right: 0;
 					z-index: 1;
+					animation: fadeRight 1s forwards;
 				}
 
 				&.lanche {
 					bottom: 0;
 					left: 52px;
 					z-index: 2;
+					animation: fadeUp 1s forwards;
 				}
 
 				&.logo {
 					bottom: 6px;
 					right: 10px;
 					z-index: 3;
+					opacity: 0;
+					animation: zoomIn 1s 0.5s forwards;
 				}
 			}
 		}
@@ -239,6 +284,8 @@ header {
 			display: flex;
 			align-items: center;
 			gap: 1.6rem;
+
+			animation: zoomIn 1s forwards;
 
 			&:before {
 				content: "";
@@ -297,10 +344,11 @@ header {
 		gap: 4.1rem;
 		flex: 1;
 		max-width: 59.7rem;
+		animation: fadeLeft 1s forwards;
 
 		h3 {
 			color: var(--white);
-			font-family: "Ubuntu", sans-serif;
+			font-family: var(--font-mono);
 			font-size: 2.5rem;
 			font-weight: bold;
 			margin-bottom: 0.5rem;
@@ -308,7 +356,7 @@ header {
 
 		h2 {
 			color: var(--brown);
-			font-family: "Ubuntu", sans-serif;
+			font-family: var(--font-mono);
 			font-size: 4.2rem;
 			font-weight: bold;
 			letter-spacing: -3px;
@@ -321,18 +369,410 @@ header {
 		border-radius: 0.6rem;
 		margin-right: 3rem;
 		max-width: 52.8rem;
+		animation: fadeRight 1s forwards;
 
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 1.9rem;
 		padding: 3rem 0;
+		transition: var(--transition);
+
+		&:hover {
+			background-color: var(--cream);
+		}
 
 		span {
 			color: var(--blue);
-			font-family: "Ubuntu", sans-serif;
+			font-family: var(--font-mono);
 			font-size: 2rem;
 			font-weight: bold;
 		}
+	}
+}
+
+.s-combos {
+	padding: 7rem 0;
+
+	.highlights {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 3.2rem;
+		animation: zoomIn 1s forwards;
+
+		& > .box {
+			background-color: var(--yellow) !important;
+			width: 26.3rem !important;
+		}
+
+		.box {
+			background-color: var(--cream);
+			border-radius: 12px;
+			width: 21.8rem;
+			height: 14.4rem;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 9px;
+
+			h3 {
+				font-size: 2.2rem;
+				font-weight: bold;
+				text-align: center;
+				color: var(--white);
+				text-transform: uppercase;
+				line-height: 130%;
+				font-family: var(--font-mono);
+			}
+		}
+
+		ul {
+			flex: 1;
+			max-width: 92.2rem;
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: 1.6rem;
+
+			li {
+				.box {
+					cursor: pointer;
+					transition: var(--transition);
+
+					&:hover {
+						background-color: var(--brown);
+						transform: scale(1.05);
+						box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25),
+							0px 4px 4px rgba(0, 0, 0, 0.25);
+					}
+				}
+			}
+		}
+	}
+
+	.area-slide {
+		position: relative;
+		margin-top: 6.2rem;
+		animation: fadeUp 1s forwards;
+
+		.btn {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: var(--yellow);
+			z-index: 2;
+			border-radius: 50%;
+			width: 4.8rem;
+			height: 4.8rem;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: var(--transition);
+
+			&.swiper-button-disabled {
+				opacity: 0.8;
+				cursor: not-allowed;
+				pointer-events: none;
+			}
+
+			&:hover {
+				background-color: var(--orange);
+			}
+
+			&.btn-prev {
+				left: -2.4rem;
+			}
+
+			&.btn-next {
+				right: -2.4rem;
+				transform: translateY(-50%) rotate(180deg);
+			}
+		}
+
+		.slide-combos {
+			overflow: hidden;
+
+			.card-combo {
+				width: 100%;
+				height: 49.3rem;
+				border-radius: 6px;
+				overflow: hidden;
+				background-color: var(--cream);
+
+				.image {
+					position: relative;
+					width: 100%;
+					height: 34rem;
+					overflow: hidden;
+					border-bottom: 3px dotted var(--white);
+
+					& > img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+
+					button {
+						position: absolute;
+						top: 2.5rem;
+						right: 2.6rem;
+						z-index: 2;
+						width: 3.8rem;
+						height: 3.8rem;
+						border-radius: 50%;
+						background-color: var(--white);
+
+						display: flex;
+						align-items: center;
+						justify-content: center;
+
+						transition: var(--transition);
+
+						&:hover {
+							background-color: var(--cream);
+						}
+					}
+				}
+
+				.info {
+					padding: 3.6rem 4.4rem;
+
+					strong {
+						color: var(--brown);
+						font-size: 1.6rem;
+						font-weight: bold;
+						margin-bottom: 1.4rem;
+						letter-spacing: -0.2px;
+						display: block;
+					}
+
+					h3 {
+						font-family: var(--font-mono);
+						font-size: 3.2rem;
+						color: var(--orange);
+					}
+				}
+			}
+		}
+	}
+
+	.controls {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 4.7rem;
+
+		.swiper-pagination {
+			position: relative;
+			left: 0;
+			width: auto;
+
+			.swiper-pagination-bullet {
+				background-color: var(--yellow);
+
+				&-active {
+					background-color: var(--orange);
+					transform: scale(1.1);
+				}
+			}
+		}
+
+		button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 1.4rem;
+
+			span {
+				color: var(--yellow);
+				font-family: var(--font-mono);
+				font-size: 1.4rem;
+				font-weight: bold;
+				text-transform: uppercase;
+
+				transition: var(--transition);
+
+				&:hover {
+					color: var(--orange);
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	background-color: var(--brown);
+
+	.main-area {
+		padding-top: 4.9rem;
+		padding-bottom: 4.4rem;
+		animation: zoomIn 1s forwards;
+
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			& > ul {
+				gap: 3.5rem;
+			}
+		}
+
+		ul {
+			display: flex;
+			align-items: center;
+
+			li {
+				a {
+					color: var(--white);
+					font-size: 0.9375rem;
+					font-weight: bold;
+					font-family: var(--font-mono);
+					transition: var(--transition);
+
+					&:hover {
+						color: var(--yellow);
+					}
+				}
+			}
+		}
+
+		.logo {
+			width: 9.6rem;
+			height: 9.6rem;
+			background-color: var(--white);
+			border-radius: 50%;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.social {
+			display: flex;
+			align-items: center;
+			gap: 3.1rem;
+
+			span {
+				color: var(--white);
+				font-size: 0.9375rem;
+				font-weight: bold;
+				font-family: var(--font-mono);
+			}
+
+			ul {
+				gap: 2.3rem;
+			}
+
+			li {
+				a {
+					width: 6.4rem;
+					height: 6.4rem;
+					background-color: #5d2a1c;
+					border-radius: 50%;
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					img {
+						transition: var(--transition);
+
+						&:hover {
+							transform: scale(1.2);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.copy {
+		text-align: center;
+		padding-bottom: 1rem;
+		animation: fadeUp 1s forwards;
+
+		p {
+			color: var(--gray);
+			font-size: 1.4rem;
+			font-weight: bold;
+			font-family: var(--font-mono);
+		}
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.05);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes fadeLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeRight {
+	from {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeUp {
+	from {
+		transform: translateY(20px);
+	}
+
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeDown {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes zoomIn {
+	from {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
 	}
 }
